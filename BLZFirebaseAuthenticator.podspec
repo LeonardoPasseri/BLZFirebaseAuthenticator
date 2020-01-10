@@ -25,8 +25,6 @@ Pod::Spec.new do |s|
   s.author           = { 'Leonardo Passeri' => 'leonardo@balzo.eu' }
   s.source           = { :git => 'https://github.com/LeonardoPasseri/BLZFirebaseAuthenticator.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
-
-  s.source_files = 'BLZFirebaseAuthenticator/Classes/**/*'
   
   s.swift_version = "5.1"
   
@@ -36,14 +34,45 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Firebase/Core', '~> 6.0'
-  s.dependency 'Firebase/Auth', '~> 6.0'
-  s.dependency 'GoogleSignIn', '~> 4.0'
-  s.dependency 'RxSwift', '~> 4.0'
-  s.dependency 'FBSDKCoreKit', '~> 5.0'
-  s.dependency 'FBSDKLoginKit', '~> 5.0'
+  
+  s.subspec "Core" do |ss|
+    ss.source_files = 'BLZFirebaseAuthenticator/Classes/Core/*'
+    ss.dependency 'Firebase/Core', '~> 6.0'
+    ss.dependency 'Firebase/Auth', '~> 6.0'
+    ss.dependency 'RxSwift', '~> 4.0'
+    ss.framework  = 'UIKit'
+  end
+  
+  s.subspec "Facebook" do |ss|
+    ss.source_files = 'BLZFirebaseAuthenticator/Classes/Facebook/*'
+    ss.dependency 'BLZFirebaseAuthenticator/Core'
+    ss.dependency 'Firebase/Core', '~> 6.0'
+    ss.dependency 'Firebase/Auth', '~> 6.0'
+    ss.dependency 'RxSwift', '~> 4.0'
+    ss.dependency 'FBSDKCoreKit', '~> 5.0'
+    ss.dependency 'FBSDKLoginKit', '~> 5.0'
+    ss.framework  = 'UIKit'
+  end
+  
+  s.subspec "Google" do |ss|
+    ss.source_files = 'BLZFirebaseAuthenticator/Classes/Google/*'
+    ss.dependency 'BLZFirebaseAuthenticator/Core'
+    ss.dependency 'Firebase/Core', '~> 6.0'
+    ss.dependency 'Firebase/Auth', '~> 6.0'
+    ss.dependency 'RxSwift', '~> 4.0'
+    ss.dependency 'GoogleSignIn', '~> 4.0'
+    ss.framework  = 'UIKit'
+  end
+  
+  s.subspec "Email" do |ss|
+    ss.source_files = 'BLZFirebaseAuthenticator/Classes/Email/*'
+    ss.dependency 'BLZFirebaseAuthenticator/Core'
+    ss.dependency 'Firebase/Core', '~> 6.0'
+    ss.dependency 'Firebase/Auth', '~> 6.0'
+    ss.dependency 'RxSwift', '~> 4.0'
+    ss.framework  = 'UIKit'
+  end
   
   s.static_framework = true
-  
   
 end

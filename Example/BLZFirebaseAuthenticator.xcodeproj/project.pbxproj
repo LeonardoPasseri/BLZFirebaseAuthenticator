@@ -171,7 +171,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				47A1ED96E05B61B7D69923C6 /* [CP] Embed Pods Frameworks */,
-				2E652175E9C3DBE68BB87046 /* [CP] Copy Pods Resources */,
+				62A6B119BA3404E614C90829 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,24 +266,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E652175E9C3DBE68BB87046 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		47A1ED96E05B61B7D69923C6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +294,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62A6B119BA3404E614C90829 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8280A5540007EB966A7C46A4 /* [CP] Check Pods Manifest.lock */ = {

@@ -1,7 +1,22 @@
 PODS:
-  - BLZFirebaseAuthenticator (0.1.0):
+  - BLZFirebaseAuthenticator/Core (0.1.0):
+    - Firebase/Auth (~> 6.0)
+    - Firebase/Core (~> 6.0)
+    - RxSwift (~> 4.0)
+  - BLZFirebaseAuthenticator/Email (0.1.0):
+    - BLZFirebaseAuthenticator/Core
+    - Firebase/Auth (~> 6.0)
+    - Firebase/Core (~> 6.0)
+    - RxSwift (~> 4.0)
+  - BLZFirebaseAuthenticator/Facebook (0.1.0):
+    - BLZFirebaseAuthenticator/Core
     - FBSDKCoreKit (~> 5.0)
     - FBSDKLoginKit (~> 5.0)
+    - Firebase/Auth (~> 6.0)
+    - Firebase/Core (~> 6.0)
+    - RxSwift (~> 4.0)
+  - BLZFirebaseAuthenticator/Google (0.1.0):
+    - BLZFirebaseAuthenticator/Core
     - Firebase/Auth (~> 6.0)
     - Firebase/Core (~> 6.0)
     - GoogleSignIn (~> 4.0)
@@ -111,7 +126,9 @@ PODS:
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
-  - BLZFirebaseAuthenticator (from `../`)
+  - BLZFirebaseAuthenticator/Email (from `../`)
+  - BLZFirebaseAuthenticator/Facebook (from `../`)
+  - BLZFirebaseAuthenticator/Google (from `../`)
   - FBSnapshotTestCase (~> 2.1.4)
   - Nimble (~> 7.0)
 
@@ -144,7 +161,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BLZFirebaseAuthenticator: 9b2c02c3a8aa3cda6b84eb4aa420471ccdc3e6c1
+  BLZFirebaseAuthenticator: 9542eb0700039e92e7928f32189efc5f945f8e82
   FBSDKCoreKit: b1645dba3dfdba6102f2d4026fdbfca8114dc229
   FBSDKLoginKit: 0e4572e0279e477103b57978e3ea05fac1dd673d
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
@@ -167,6 +184,6 @@ SPEC CHECKSUMS:
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 69385d99aab0164a2b67f739e8b4cfcb1242747c
+PODFILE CHECKSUM: 73af8272ea8b638aafa44ec151da21f3c8538a49
 
 COCOAPODS: 1.8.4

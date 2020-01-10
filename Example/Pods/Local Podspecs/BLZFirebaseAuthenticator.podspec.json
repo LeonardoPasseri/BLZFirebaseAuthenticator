@@ -2,8 +2,8 @@
   "name": "BLZFirebaseAuthenticator",
   "version": "0.1.0",
   "summary": "Wrapper for Firebase Authentication ecosystem",
-  "description": "Wrapper for Firebase Authentication ecosystem",
-  "homepage": "https://github.com/Leonardo Passeri/BLZFirebaseAuthenticator",
+  "description": "Wrapper for Firebase Authentication ecosystem that allow you to easily add Facebook, Google and Email authentication to your app",
+  "homepage": "https://github.com/LeonardoPasseri/BLZFirebaseAuthenticator",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -18,26 +18,91 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "BLZFirebaseAuthenticator/Classes/**/*",
-  "dependencies": {
-    "Firebase/Core": [
-      "~> 6.0"
-    ],
-    "Firebase/Auth": [
-      "~> 6.0"
-    ],
-    "GoogleSignIn": [
-      "~> 4.0"
-    ],
-    "RxSwift": [
-      "~> 4.0"
-    ],
-    "FBSDKCoreKit": [
-      "~> 5.0"
-    ],
-    "FBSDKLoginKit": [
-      "~> 5.0"
-    ]
-  },
-  "static_framework": true
+  "swift_versions": "5.1",
+  "static_framework": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "BLZFirebaseAuthenticator/Classes/Core/*",
+      "dependencies": {
+        "Firebase/Core": [
+          "~> 6.0"
+        ],
+        "Firebase/Auth": [
+          "~> 6.0"
+        ],
+        "RxSwift": [
+          "~> 4.0"
+        ]
+      },
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "Facebook",
+      "source_files": "BLZFirebaseAuthenticator/Classes/Facebook/*",
+      "dependencies": {
+        "BLZFirebaseAuthenticator/Core": [
+
+        ],
+        "Firebase/Core": [
+          "~> 6.0"
+        ],
+        "Firebase/Auth": [
+          "~> 6.0"
+        ],
+        "RxSwift": [
+          "~> 4.0"
+        ],
+        "FBSDKCoreKit": [
+          "~> 5.0"
+        ],
+        "FBSDKLoginKit": [
+          "~> 5.0"
+        ]
+      },
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "Google",
+      "source_files": "BLZFirebaseAuthenticator/Classes/Google/*",
+      "dependencies": {
+        "BLZFirebaseAuthenticator/Core": [
+
+        ],
+        "Firebase/Core": [
+          "~> 6.0"
+        ],
+        "Firebase/Auth": [
+          "~> 6.0"
+        ],
+        "RxSwift": [
+          "~> 4.0"
+        ],
+        "GoogleSignIn": [
+          "~> 4.0"
+        ]
+      },
+      "frameworks": "UIKit"
+    },
+    {
+      "name": "Email",
+      "source_files": "BLZFirebaseAuthenticator/Classes/Email/*",
+      "dependencies": {
+        "BLZFirebaseAuthenticator/Core": [
+
+        ],
+        "Firebase/Core": [
+          "~> 6.0"
+        ],
+        "Firebase/Auth": [
+          "~> 6.0"
+        ],
+        "RxSwift": [
+          "~> 4.0"
+        ]
+      },
+      "frameworks": "UIKit"
+    }
+  ],
+  "swift_version": "5.1"
 }
