@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		4A2FB6550751760EC4615591 /* Pods_BLZFirebaseAuthenticator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388A6F9C7A27D2E59A5B82A6 /* Pods_BLZFirebaseAuthenticator_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* LoginViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		89C85B4A23C8B598003420E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89C85B4923C8B598003420E1 /* GoogleService-Info.plist */; };
+		89C85B4C23C8C11E003420E1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B4B23C8C11E003420E1 /* ProfileViewController.swift */; };
+		89C85B4E23C8C19A003420E1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B4D23C8C19A003420E1 /* SignUpViewController.swift */; };
+		89C85B5023C8C1B4003420E1 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B4F23C8C1B4003420E1 /* EmailLoginViewController.swift */; };
+		89C85B5223C8C8E4003420E1 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B5123C8C8E4003420E1 /* UIViewController+Alert.swift */; };
+		89C85B5423C8CAA3003420E1 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B5323C8CAA3003420E1 /* UIViewController+Navigation.swift */; };
+		89C85B5623C8E30E003420E1 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B5523C8E30E003420E1 /* UIViewController+HideKeyboard.swift */; };
+		89C85B5823C8E802003420E1 /* FirebaseAuthenticationError+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C85B5723C8E802003420E1 /* FirebaseAuthenticationError+Localization.swift */; };
 		B74B3A43A43DD02EB3FF1E2F /* Pods_BLZFirebaseAuthenticator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9112294CC0579620F5CFA7 /* Pods_BLZFirebaseAuthenticator_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +43,7 @@
 		607FACD01AFB9204008FA782 /* BLZFirebaseAuthenticator_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLZFirebaseAuthenticator_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -44,6 +52,14 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		751DDBAD9FEF670B9F9E47A5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		7C36AB84DB6636A2A879D02E /* Pods-BLZFirebaseAuthenticator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLZFirebaseAuthenticator_Tests.release.xcconfig"; path = "Target Support Files/Pods-BLZFirebaseAuthenticator_Tests/Pods-BLZFirebaseAuthenticator_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		89C85B4923C8B598003420E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89C85B4B23C8C11E003420E1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		89C85B4D23C8C19A003420E1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		89C85B4F23C8C1B4003420E1 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		89C85B5123C8C8E4003420E1 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		89C85B5323C8CAA3003420E1 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		89C85B5523C8E30E003420E1 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		89C85B5723C8E802003420E1 /* FirebaseAuthenticationError+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseAuthenticationError+Localization.swift"; sourceTree = "<group>"; };
 		8D9112294CC0579620F5CFA7 /* Pods_BLZFirebaseAuthenticator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLZFirebaseAuthenticator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A243334E956B459AC3B58CA5 /* BLZFirebaseAuthenticator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BLZFirebaseAuthenticator.podspec; path = ../BLZFirebaseAuthenticator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EFA5D4E95C92615CE4FD6D84 /* Pods-BLZFirebaseAuthenticator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLZFirebaseAuthenticator_Example.debug.xcconfig"; path = "Target Support Files/Pods-BLZFirebaseAuthenticator_Example/Pods-BLZFirebaseAuthenticator_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +121,14 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* LoginViewController.swift */,
+				89C85B4B23C8C11E003420E1 /* ProfileViewController.swift */,
+				89C85B4D23C8C19A003420E1 /* SignUpViewController.swift */,
+				89C85B4F23C8C1B4003420E1 /* EmailLoginViewController.swift */,
+				89C85B5123C8C8E4003420E1 /* UIViewController+Alert.swift */,
+				89C85B5323C8CAA3003420E1 /* UIViewController+Navigation.swift */,
+				89C85B5523C8E30E003420E1 /* UIViewController+HideKeyboard.swift */,
+				89C85B5723C8E802003420E1 /* FirebaseAuthenticationError+Localization.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -118,6 +141,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				89C85B4923C8B598003420E1 /* GoogleService-Info.plist */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -251,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				89C85B4A23C8B598003420E1 /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -385,7 +410,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				89C85B5023C8C1B4003420E1 /* EmailLoginViewController.swift in Sources */,
+				89C85B5623C8E30E003420E1 /* UIViewController+HideKeyboard.swift in Sources */,
+				89C85B5423C8CAA3003420E1 /* UIViewController+Navigation.swift in Sources */,
+				89C85B4C23C8C11E003420E1 /* ProfileViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* LoginViewController.swift in Sources */,
+				89C85B5223C8C8E4003420E1 /* UIViewController+Alert.swift in Sources */,
+				89C85B5823C8E802003420E1 /* FirebaseAuthenticationError+Localization.swift in Sources */,
+				89C85B4E23C8C19A003420E1 /* SignUpViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D EMAIL_LOGIN -D FACEBOOK_LOGIN -D GOOGLE_LOGIN";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -514,6 +547,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -522,6 +556,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D EMAIL_LOGIN -D FACEBOOK_LOGIN -D GOOGLE_LOGIN";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
@@ -538,7 +573,7 @@
 				INFOPLIST_FILE = BLZFirebaseAuthenticator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.balzo.BLZFirebaseAuthenticatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
@@ -553,7 +588,7 @@
 				INFOPLIST_FILE = BLZFirebaseAuthenticator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.balzo.BLZFirebaseAuthenticatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};

@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import FirebaseAuth
 
-public enum FirebaseAuthenticationEmailError: LocalizedError {
+public enum FirebaseAuthenticationEmailError : Error {
     case emailAlreadyTakenError
     case userNotFoundError
     case wrongPasswordError
@@ -18,9 +18,9 @@ public enum FirebaseAuthenticationEmailError: LocalizedError {
 
 extension FirebaseAuthenticator {
     
-    public func emailLogin(email: String, password: String) -> Single<FirebaseAuthInfo> {
+    public static func emailLogin(email: String, password: String) -> Single<FirebaseAuthInfo> {
         
-        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(onApplicationOpenUrlCallback: { _,_,_ in return false }, logOutCallback: {})
+        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(logOutCallback: {})
         
         return Single<FirebaseAuthInfo>.create { (single) -> Disposable in
             Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
@@ -48,7 +48,7 @@ extension FirebaseAuthenticator {
         }
     }
     
-    public func registerUser(email: String, password: String) -> Single<Void> {
+    public static func registerUser(email: String, password: String) -> Single<Void> {
         return Single<Void>.create { (single) -> Disposable in
             Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 guard nil != authResult?.user && error == nil else {
@@ -70,7 +70,7 @@ extension FirebaseAuthenticator {
             }
     }
     
-    public func forgotPassword(email: String) -> Single<Void> {
+    public static func forgotPassword(email: String) -> Single<Void> {
         return Single<Void>.create { (single) -> Disposable in
             Auth.auth().useAppLanguage()
             Auth.auth().sendPasswordReset(withEmail: email) { (error) in

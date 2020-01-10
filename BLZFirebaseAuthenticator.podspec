@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   
   s.subspec "Core" do |ss|
     ss.source_files = 'BLZFirebaseAuthenticator/Classes/Core/*'
-    ss.dependency 'Firebase/Core', '~> 6.0'
+#    ss.dependency 'Firebase/Core', '~> 6.0'
     ss.dependency 'Firebase/Auth', '~> 6.0'
     ss.dependency 'RxSwift', '~> 4.0'
     ss.framework  = 'UIKit'
@@ -46,10 +46,10 @@ Pod::Spec.new do |s|
   s.subspec "Facebook" do |ss|
     ss.source_files = 'BLZFirebaseAuthenticator/Classes/Facebook/*'
     ss.dependency 'BLZFirebaseAuthenticator/Core'
-    ss.dependency 'Firebase/Core', '~> 6.0'
+#    ss.dependency 'Firebase/Core', '~> 6.0'
     ss.dependency 'Firebase/Auth', '~> 6.0'
     ss.dependency 'RxSwift', '~> 4.0'
-    ss.dependency 'FBSDKCoreKit', '~> 5.0'
+#    ss.dependency 'FBSDKCoreKit', '~> 5.0'
     ss.dependency 'FBSDKLoginKit', '~> 5.0'
     ss.framework  = 'UIKit'
   end
@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
   s.subspec "Google" do |ss|
     ss.source_files = 'BLZFirebaseAuthenticator/Classes/Google/*'
     ss.dependency 'BLZFirebaseAuthenticator/Core'
-    ss.dependency 'Firebase/Core', '~> 6.0'
+#    ss.dependency 'Firebase/Core', '~> 6.0'
     ss.dependency 'Firebase/Auth', '~> 6.0'
     ss.dependency 'RxSwift', '~> 4.0'
     ss.dependency 'GoogleSignIn', '~> 4.0'
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   s.subspec "Email" do |ss|
     ss.source_files = 'BLZFirebaseAuthenticator/Classes/Email/*'
     ss.dependency 'BLZFirebaseAuthenticator/Core'
-    ss.dependency 'Firebase/Core', '~> 6.0'
+#    ss.dependency 'Firebase/Core', '~> 6.0'
     ss.dependency 'Firebase/Auth', '~> 6.0'
     ss.dependency 'RxSwift', '~> 4.0'
     ss.framework  = 'UIKit'

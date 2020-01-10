@@ -10,10 +10,13 @@ import RxSwift
 import FirebaseAuth
 import GoogleSignIn
 
-public enum FirebaseAuthenticationGoogleError: LocalizedError {
+public enum FirebaseAuthenticationGoogleError : Error {
     case loginCancelled
     case loginError
 }
+
+// TODO: Improve this to allow more control to client code
+extension UIViewController : GIDSignInUIDelegate {}
 
 fileprivate var googleSignInDelegate: GoogleSignInDelegate?
 
@@ -64,18 +67,13 @@ fileprivate class GoogleSignInDelegate : NSObject, GIDSignInDelegate {
 
 extension FirebaseAuthenticator {
     
-    public func googleLogin(uiDelegate: GIDSignInUIDelegate) -> Single<FirebaseAuthInfo> {
+    public static func googleLogin(viewController: UIViewController) -> Single<FirebaseAuthInfo> {
 
-        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(
-            onApplicationOpenUrlCallback: { (application, url, options) -> Bool in
-                return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
-        }, logOutCallback: {
-            GIDSignIn.sharedInstance().signOut()
-        })
+        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(logOutCallback: { GIDSignIn.sharedInstance().signOut() })
         
         return Single<(credential: AuthCredential, firstName: String, lastName: String, email: String)>.create { (single) -> Disposable in
 
-            GIDSignIn.sharedInstance().uiDelegate = uiDelegate
+            GIDSignIn.sharedInstance().uiDelegate = viewController
 
             let delegate = GoogleSignInDelegate(single:single)
             GIDSignIn.sharedInstance().delegate = delegate

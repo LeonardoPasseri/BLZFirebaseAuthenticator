@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import Firebase
+#if FACEBOOK_LOGIN
+import FBSDKCoreKit
+#endif
+#if GOOGLE_LOGIN
+import GoogleSignIn
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        #if FACEBOOK_LOGIN
+        // Facebook Init
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        #endif
+        
+        #if GOOGLE_LOGIN
+        // Google Sign-In
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        #endif
+        
         return true
     }
 
@@ -40,7 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        var handled = false
+        #if FACEBOOK_LOGIN
+        handled = handled || ApplicationDelegate.shared.application(app, open: url, options: options)
+        #endif
+        #if GOOGLE_LOGIN
+        handled = handled || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        #endif
+        return handled
+    }
 }
 

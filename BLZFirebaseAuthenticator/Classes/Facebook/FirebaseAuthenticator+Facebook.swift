@@ -11,7 +11,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import FirebaseAuth
 
-public enum FirebaseAuthenticationFacebookError: LocalizedError {
+public enum FirebaseAuthenticationFacebookError : Error {
     case loginCancelled
     case loginError
     case missingEmailError
@@ -21,12 +21,9 @@ public enum FirebaseAuthenticationFacebookError: LocalizedError {
 
 extension FirebaseAuthenticator {
     
-    public func facebookLogin(view:UIViewController) -> Single<FirebaseAuthInfo> {
+    public static func facebookLogin(view:UIViewController) -> Single<FirebaseAuthInfo> {
 
-        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(
-            onApplicationOpenUrlCallback: { (application, url, options) -> Bool in
-                return ApplicationDelegate.shared.application(application, open: url, options: options)
-        }, logOutCallback: {
+        self.currentFirebaseAuthFlowManager = FirebaseAuthFlowManager(logOutCallback: {
             let login = LoginManager()
             login.logOut()
         })
