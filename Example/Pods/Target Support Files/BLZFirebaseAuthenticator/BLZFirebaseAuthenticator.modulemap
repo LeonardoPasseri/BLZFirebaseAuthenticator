@@ -1,0 +1,6 @@
+framework module BLZFirebaseAuthenticator {
+  umbrella header "BLZFirebaseAuthenticator-umbrella.h"
+
+  export *
+  module * { export * }
+}

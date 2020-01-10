@@ -1,0 +1,6 @@
+framework module Pods_BLZFirebaseAuthenticator_Example {
+  umbrella header "Pods-BLZFirebaseAuthenticator_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
